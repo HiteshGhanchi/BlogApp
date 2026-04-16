@@ -1,0 +1,38 @@
+@import './styles/design-tokens.css';
+
+/* Global Reset & Base System */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--surface);
+  color: var(--on-surface);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  margin-top: 0;
+}
+
+/* Strict enforcement of the "No-Line" Rule */
+hr {
+  display: none !important;
+}
+
+button {
+  font-family: var(--font-sans);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

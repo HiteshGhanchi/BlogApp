@@ -1,0 +1,42 @@
+:root {
+  /* Colors: "Deep Forest" Motif */
+  --primary: #18301d; /* Forest green */
+  --on-primary: #ffffff;
+  --primary-container: #2e4632;
+  --primary-fixed-dim: #b2ceb3;
+  --secondary: #dbe6d8; 
+  --secondary-container: #dbe6d8;
+  --on-secondary-container: #18301d;
+  
+  --on-surface: #1a1c1b;
+  --on-surface-variant: #434842;
+  --outline-variant: #c3c8c0;
+
+  /* Surfaces & Background Shifts */
+  --surface-container-lowest: #ffffff;
+  --surface: #faf9f7; /* Main Canvas */
+  --surface-container-low: #f4f3f1; /* Secondary Modules */
+  --surface-container-high: #e9e8e6; /* Featured */
+  --surface-container-highest: #e3e2e0; /* Active Elements */
+  
+  /* Typography Variables */
+  --font-serif: 'Newsreader', serif;
+  --font-sans: 'Manrope', sans-serif;
+  
+  /* Effects */
+  --shadow-ambient: 0 20px 40px rgba(26, 28, 27, 0.06);
+  --glass-blur: blur(20px);
+  --borderRadius-lg: 0.5rem;
+  --borderRadius-xl: 0.75rem;
+
+  /* Typography Scales */
+  --fs-display-lg: 3.5rem;
+  --fs-headline-lg: 2.25rem;
+  --fs-body-lg: 1.125rem;
+  --fs-label-md: 0.875rem;
+  
+  /* Spacings */
+  --spacing-md: 16px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+}

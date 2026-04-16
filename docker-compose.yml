@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  # --- Infrastructure ---
+  postgres:
+    image: postgres:15-alpine
+    container_name: blog_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      POSTGRES_DB: ${POSTGRES_DB:-blog_db}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - blog_network
+
+  redis:
+    image: redis:7-alpine
+    container_name: blog_redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+    networks:
+      - blog_network
+
+  backend:
+    build:
+      context: ./backend
+      target: development
+    container_name: blog_backend
+    environment:
+      - PORT=3000
+      - POSTGRES_USER=${POSTGRES_USER:-admin}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
+      - POSTGRES_DB=${POSTGRES_DB:-blog_db}
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=${JWT_SECRET:-deep_forest_editorial_secret_9988}
+    ports:
+      - "3001:3000"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - blog_network
+
+  frontend:
+    build:
+      context: ./frontend
+      target: development
+    container_name: blog_frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    networks:
+      - blog_network
+
+volumes:
+  pgdata:
+  redisdata:
+
+
+networks:
+  blog_network:
+    driver: bridge

@@ -1,0 +1,5 @@
+.card-container {
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--borderRadius-lg);
+  /* Intentionally no borders. Elevation via ambient shadow and background shifts. */
+}

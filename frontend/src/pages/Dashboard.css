@@ -1,0 +1,134 @@
+.dashboard-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--spacing-xxl) var(--spacing-xl);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.dashboard-title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-display-lg);
+  color: var(--primary);
+}
+
+/* Editor Styling */
+.editor-card {
+  margin-bottom: var(--spacing-xxl);
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.editor-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.editor-input-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  border: none;
+  background: transparent;
+  color: var(--on-surface);
+  padding: 8px 0;
+  border-bottom: 2px solid var(--surface-container-highest);
+}
+
+.editor-input-title:focus {
+  outline: none;
+  border-bottom-color: var(--primary);
+}
+
+.editor-input-excerpt {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  border: none;
+  background: var(--surface-container-low);
+  padding: 12px;
+  border-radius: var(--borderRadius-lg);
+  resize: vertical;
+  min-height: 80px;
+}
+
+.quill-wrapper {
+  background: white;
+  border-radius: var(--borderRadius-lg);
+  overflow: hidden;
+}
+
+.editor-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Manager Table Styling */
+.manager-subtitle {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--fs-label-md);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--on-surface-variant);
+  margin-bottom: var(--spacing-md);
+}
+
+.admin-table-wrapper {
+  background-color: var(--surface-container-low);
+  border-radius: var(--borderRadius-xl);
+  overflow: hidden;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  text-align: left;
+  padding: 16px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--on-surface-variant);
+  border-bottom: 2px solid var(--surface-container-highest);
+}
+
+.admin-table td {
+  padding: 16px;
+  font-family: var(--font-sans);
+  color: var(--on-surface);
+}
+
+.admin-table-row:nth-child(even) {
+  background-color: var(--surface-container-lowest);
+}
+
+.admin-table-title {
+  font-weight: 600;
+}
+
+.admin-delete-btn {
+  background: none;
+  border: none;
+  color: #b91c1c;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-xl);
+  font-style: italic;
+  color: var(--on-surface-variant);
+}

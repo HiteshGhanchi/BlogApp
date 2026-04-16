@@ -78,6 +78,6 @@ jobs:
             echo "JWT_SECRET=${{ secrets.PROD_JWT_SECRET }}" >> .env
             
             # 4. Pull fresh images and restart
-            sudo docker compose -f docker-compose.prod.yml down
-            sudo docker compose -f docker-compose.prod.yml pull
-            sudo docker compose -f docker-compose.prod.yml up -d
+            sudo docker-compose -f docker-compose.prod.yml down
+            sudo docker-compose -f docker-compose.prod.yml pull
+            sudo docker-compose -f docker-compose.prod.yml up -d
